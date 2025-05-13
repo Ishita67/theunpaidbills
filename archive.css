@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Anek Latin", sans-serif;
+  background: #000;
+  color: #b1492e;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  background: black;
+  padding: 1rem;
+  justify-content: flex-end;
+  font-family:"Anek Latin", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+nav a {
+  color: #b1492e;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline #B4A23A;
+}
+
+/* Common Heading Style for CREATE, ABOUT, ARCHIVE, HOME */
+
+.common-heading {
+  text-align: center;
+  font-family: "Yatra One", system-ui;
+  font-weight: 900;
+  font-size: 8vw; /* Responsive font size */
+  color: #b1492e;
+  margin-top: 2rem; /* Adjust vertical positioning */
+  display: flex;
+  justify-content: center; /* Center text */
+  align-items: center;
+  gap: 10px; /* Space between text and image */
+}
+
+/* Optional: Image next to the heading */
+.common-heading img {
+  width: 250px; /* Image width */
+  height: 250px; /* Image height */
+}
+
+/* Bottom Banner */
+.bottom-banner {
+  font-family:"Anek Latin", sans-serif;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.bottom-banner h1 {
+  font-family:"Yatra One", system-ui;
+  font-size: 120px;
+  color: #b1492e;
+  font-weight: 900;
+  letter-spacing: 16px;
+}

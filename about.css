@@ -1,0 +1,286 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Anek Latin", sans-serif;
+  background: #000;
+  color: #b1492e;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  background: black;
+  padding: 1rem;
+  justify-content: flex-end;
+  font-family: "Anek Latin", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+nav a {
+  color: #b1492e;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline #B4A23A;
+}
+
+/* Common Heading Style for CREATE, ABOUT, ARCHIVE, HOME */
+
+.common-heading {
+  text-align: center;
+  font-family: "Yatra One", system-ui;
+  font-weight: 900;
+  font-size: 8vw; /* Responsive font size */
+  color: #b1492e;
+  margin-top: 2rem; /* Adjust vertical positioning */
+  display: flex;
+  justify-content: center; /* Center text */
+  align-items: center;
+  gap: 10px; /* Space between text and image */
+}
+
+/* Optional: Image next to the heading */
+.common-heading img {
+  width: 200px; /* Image width */
+  height: 200px; /* Image height */
+}
+
+.container1 {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Mission Section */
+.history {
+  padding: 2rem 0;
+}
+
+.history-content {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;  /* vertical align center */
+  gap: 2rem;
+}
+
+.history-image {
+  flex: 1;
+  display: flex;
+   align-items: center;
+  justify-content: center;
+}
+
+.history-image img {
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  align-items: center;
+
+}
+
+.history-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;  /* text on the left side */
+}
+
+.history h2 {
+  font-family: "Yatra One", system-ui;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+
+.history p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+
+
+/* Container */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Mission Section */
+.mission {
+  padding: 2rem 0;
+}
+
+.mission-content {
+  display: flex;
+  flex-wrap: nowrap; 
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.mission-text{
+  flex:2;
+}
+
+.mission-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mission-image img {
+  max-width: 400px;
+  height: auto;
+  width: 100%; /* control image size */
+  object-fit: contain;
+  margin-top: -115px;
+}
+
+.mission h2 {
+  font-family: "Yatra One", system-ui;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+
+.mission p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.mission strong {
+  color: #B4A23A; /* Grey for "The Unpaid Bills" */
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.left, .right {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left img {
+ max-width: 70%;
+height: auto;
+}
+
+.right{
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 2rem;
+}
+
+.stat {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: left; 
+  text-align: left;  
+}
+
+.stat h2 {
+  font-family: "Yatra One", system-ui;
+  color: #b1492e;
+  font-size: 32px;
+}
+
+.stat h1 {
+  font-family: "Yatra One", system-ui;
+  font-size: 140px;
+  color: #B4A23A; /* Light grey for percentage numbers */
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat p {
+  color: #b1492e;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.bottom-banner {
+  font-family: "Anek Latin", sans-serif;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.bottom-banner h1 {
+  font-family: "Yatra One", system-ui;
+  font-size: 95px;
+  color: #b1492e;
+  font-weight: 900px;
+  letter-spacing: 16px;
+  margin: 0;
+}
+
+.footer {
+  margin: 1rem;
+  padding: 2rem 1rem;
+  background-color: #000; /* adjust as needed */
+  border-top: 2px solid #d4af37; /* optional golden line */
+  color: #d46337; /* your current body color */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column; /* <-- forces vertical stacking */
+  gap: 0.5rem;             /* optional spacing between elements */
+}
+
+.footer-column.left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.footer-column.right {
+  text-align: right;
+  align-items: flex-end;  /* ensures flex children align to the right */
+}
+
+
+.footer-column h3 {
+  color: #d4af37;
+  font-family: "Yatra One", system-ui;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: #d46337;
+  font-family: "Anek Latin", sans-serif;
+  text-decoration: underline;
+}

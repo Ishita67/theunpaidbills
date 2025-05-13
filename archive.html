@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .receipt {
+        font-family: Monospace;
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 1rem;
+/*         border-radius: 10px; */
+        background: #f9f9f9;
+/*         box-shadow: rgba(255, 230, 245, 0.15) 0px 48px 100px 0px; */
+      }
+      .barcode {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+        color: #555;
+      }
+      h1, h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .line {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+      }
+      hr {
+        margin: 0.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html">Create</a>
+       <a href="archive.html" class="active">Archive</a>
+    </nav>
+
+    <div class="common-heading">ARCHIVE
+       <img src="https://cdn.glitch.global/2150941d-89bb-4b40-bc81-b088f1c417ad/7.png?v=1745800485692" alt="archive-image">
+    </div>
+    
+    <div class="subhead">
+    <p> </p>
+    </div>
+    
+    <div class="gallery" id="gallery">
+    
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCYpMxFDUubkJah6ZeeIaQPpVnt-oEHcMc",
+        authDomain: "the-unpaid-bills.firebaseapp.com",
+        projectId: "the-unpaid-bills",
+        storageBucket: "the-unpaid-bills.firebasestorage.app",
+        messagingSenderId: "450257027228",
+        appId: "1:450257027228:web:af84d0053e516a9e2c2d59",
+        measurementId: "G-KDPQ12W7KK"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const gallery = document.getElementById("gallery");
+
+      async function loadReceipts() {
+        const querySnapshot = await getDocs(collection(db, "receipts"));
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const receipt = document.createElement("div");
+          receipt.className = "receipt";
+
+          receipt.innerHTML = `
+            <h1>The Unpaid Bills</h1>
+            <h2>Every Indian Household</h2>
+            <div><strong>${data.fullName}</strong> - ${data.occupation}</div>
+            <hr/>
+            <div id="items">
+              ${data.selectedServices.map(service => `
+                <div class="line"><span>${service}</span><span>0.00</span></div>
+              `).join('')}
+            </div>
+            <hr/>
+            <div class="totals">
+              <div class="line"><span>Order Total:</span><span>${data.orderTotal}</span></div>
+              <div class="line"><span>Grand Total:</span><span>${data.grandTotal}</span></div>
+              <div style="margin-top:.5rem; font-size:.8rem;">
+                CREDIT: A rare “thank you” or nothing at all
+              </div>
+            </div>
+            <hr/>
+            <div style="margin-top:1rem; font-size:.8rem;">
+             Your cashier: Society (Men)<br />
+              Customer Notice:<br/>
+              No refunds. No sick leaves. No paid holidays.<br/>
+              Position available for life.
+            </div>
+            <div class="barcode">
+              |||| | ||| ||||||| ||| | || |||| |
+            </div>
+          `;
+          gallery.appendChild(receipt);
+        });
+      }
+
+      loadReceipts();
+    </script>
+
+    <section class="bottom-banner">
+      <h1>HISTORY OWE WOMEN</h1>
+    </section>
+    
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column left">
+      <h3>📩 Get Involved</h3>
+      <p>Want to contribute, collaborate or share your story?</p>
+      <p><a href="mailto:ishita.jalan6790@gmail.com">Email us</a> or <a href="mailto:ishita.jalan6790@gmail.com">Submit a testimonial</a></p>
+    </div>
+
+    <div class="footer-column right">
+      <h3>© 2025 The Unpaid Bills</h3>
+      <p>Created by Ishita Jalan</p>
+      <p>Design to provoke | Feminist lens | Voices that matter</p>
+    </div>
+  </div>
+</footer>
+    <!-- GSAP and ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate the heading
+  gsap.from(".common-heading", {
+    opacity: 0,
+    y: 80,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".common-heading",
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  // Animate each receipt when it loads
+  const animateReceipts = () => {
+    gsap.utils.toArray(".receipt").forEach((el, i) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: i * 0.1,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+  };
+
+  // Delay execution until after receipts are loaded
+  const observer = new MutationObserver(() => {
+    if (document.querySelectorAll(".receipt").length) {
+      animateReceipts();
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.getElementById("gallery"), { childList: true });
+
+  // Animate bottom banner
+  gsap.from(".bottom-banner h1", {
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".bottom-banner",
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  // Animate footer columns
+  gsap.from(".footer-column", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "top 85%",
+      toggleActions: "play none none reset"
+    }
+  });
+</script>
+
+    
+  </body>
+</html>
+

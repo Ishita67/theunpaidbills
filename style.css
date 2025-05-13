@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Anek Latin", sans-serif;
+  background: #000;
+  color: #b1492e;
+  height: auto;
+  overflow-y: auto
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  background: black;
+  padding: 1rem;
+  justify-content: flex-end;
+  font-family: "Anek Latin", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+nav a {
+  color: #b1492e;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline #B4A23A;
+}
+
+/* Container for the two panels (form and receipt) */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: calc(100vh - 112px); /* Adjusted height to account for header */
+  width: 100%; /* Ensures full width of the viewport */
+}
+
+.form-panel,
+.receipt-panel {
+  flex: 1; /* Ensures both panels take up equal width */
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Ensuring both panels stay side by side */
+.form-panel {
+  background: #222222;
+height: auto;
+  overflow: visible;
+  padding-bottom: 2rem;
+}
+
+.receipt-panel {
+  background: #000; /* Black background behind receipt box */
+  color: #b1492e;
+  font-family: monospace;
+}
+
+label.section {
+  display: block;
+  margin-top: 1.5rem;
+  color: #b1492e;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+.form-panel button {
+  width: 100%;
+  padding: 0.5rem;
+  background: black;
+  border: 1px solid #333;
+  color: #b1492e;
+  margin-top: 0.3rem;
+  font-family:"Anek Latin", sans-serif;
+}
+
+.services {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.services label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.services input {
+  transform: scale(1.1);
+}
+
+.btn-inline {
+  width: auto;
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+button {
+  background: #222;
+  border: none;
+  color: #b1492e;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+/* Common Heading Style for CREATE, ABOUT, ARCHIVE, HOME */
+.common-heading {
+  text-align: center;
+  font-family: "Yatra One", system-ui;
+  font-weight: 900;
+  font-size: 8vw; /* Responsive font size */
+  color: #b1492e;
+  margin-top: 2rem; /* Adjust vertical positioning */
+  display: flex;
+  justify-content: center; /* Center text */
+  align-items: center;
+  gap: 10px; /* Space between text and image */
+}
+
+/* Optional: Image next to the heading */
+.common-heading img {
+  width: 250px; /* Image width */
+  height: 250px; /* Image height */
+}
+
+/* Receipt Styling */
+.receipt {
+  max-width: 400px;
+  margin: auto;
+  padding: 1rem;
+  border: 1px solid #ccc; /* Thin border around receipt */
+  background: #fff; /* White background inside receipt */
+  color: #000; /* Black font color for the receipt text */
+}
+
+.receipt h1,
+.receipt h2 {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.receipt h1 {
+  font-size: 1.2rem;
+}
+
+.receipt h2 {
+  font-size: 1rem;
+}
+
+.receipt hr {
+  border: none;
+  border-top: 1px dashed #999;
+  margin: 0.5rem 0;
+}
+
+.receipt .line {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem 0;
+}
+
+.receipt .totals {
+  margin-top: 1rem;
+}
+
+.receipt .barcode {
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.form-panel,
+.receipt-panel {
+  height: auto;
+  overflow: visible;
+  max-height: none;
+}
+
+.subhead p{
+  font-family:"Anek Latin", sans-serif;
+  color: #b1492e;
+  font-weight: 400;
+  text-align: center;
+   font-size: 20px;
+}
+
+/* Bottom Banner */
+.bottom-banner {
+  font-family:"Anek Latin", sans-serif;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.bottom-banner h1 {
+  font-family:"Yatra One", system-ui;
+  font-size: 95px;
+  color: #b1492e;
+  font-weight: 1200;
+  letter-spacing: 16px;
+}
+
+.site-footer {
+  background-color: #000;
+  color: #b1492e;
+  padding: 3rem 2rem;
+  font-family: "Anek Latin", sans-serif;
+  border-top: 2px solid #b4a23a;
+  text-align: center;
+}
+
+.site-footer h3 {
+  font-size: 1.8rem;
+  color: #b4a23a;
+  margin-bottom: 2rem;
+  font-family: "Yatra One", system-ui;
+}
+
+.footer {
+ margin-top: 40rem; /* Or increase if needed */
+  position: relative; /* Ensure it's in normal flow */
+  z-index: 1;
+  padding: 2rem 1rem;
+  background-color: #000; /* adjust as needed */
+  border-top: 2px solid #d4af37; /* optional golden line */
+  color: #d46337; /* your current body color */
+}
+
+.footer-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-column.left {
+  text-align: left;
+}
+
+.footer-column.right {
+  text-align: right;
+}
+
+.footer-column h3 {
+  color: #d4af37;
+   font-family: "Yatra One", system-ui;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: #d46337;
+  font-family: "Anek Latin", sans-serif;
+  text-decoration: underline;
+}
+
+/* Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Initial hidden state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional for specific directions */
+.animate-left.visible {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-right.visible {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+.animate-fadeup.visible {
+  animation: fadeUp 1s ease forwards;
+}
+

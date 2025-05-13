@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Anek Latin", sans-serif;
+  background: #000;
+  color: #b1492e;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  background: black;
+  padding: 1rem;
+  justify-content: flex-end;
+  font-family: "Anek Latin", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+nav a {
+  color: #b1492e;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline #B4A23A;
+}
+
+/* Common Heading Style for CREATE, ABOUT, ARCHIVE, HOME */
+
+.common-heading {
+  text-align: center;
+  font-family: "Yatra One", system-ui;
+  font-weight: 900;
+  font-size: 12vw; /* Responsive font size */
+  color: #b1492e;
+  margin-top: 2rem; /* Adjust vertical positioning */
+  display: flex;
+  justify-content: center; /* Center text */
+  align-items: center;
+  gap: 10px; /* Space between text and image */
+}
+
+/* Optional: Image next to the heading */
+.common-heading img {
+  width: 250px; /* Image width */
+  height: 250px; /* Image height */
+}
+
+.quote-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-section blockquote {
+  font-family: "Anek Latin", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #b1492e;
+  font-style: italic;
+  border-left: 4px solid #B4A23A;
+  padding-left: 1rem;
+}
+
+.quote-section p{
+  font-size: 18px;
+  font-family: "Anek Latin", sans-serif;
+  color: #B4A23A;
+  text-align: center;
+  padding-top: 10px;
+} 
+
+.intro-section {
+  padding: 0rem 2rem;
+  text-align: left;
+}
+
+.intro-wrapper {
+ display: flex;
+  align-items: center; /* Vertically centers items */
+  justify-content: center; /* Optional: horizontally centers as a group */
+  gap: 3rem; /* Space between text and image */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.intro-text {
+  flex: 1; /* Takes up remaining space */
+  min-width: 300px;
+  align-items: center;
+}
+
+.intro-section h2 {
+  font-size: 32px;
+  color: #B4A23A;
+  font-family: "Yatra One", system-ui;
+  margin-bottom: 1rem;
+}
+
+.intro-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b1492e;
+  margin-top: -10;
+  margin-bottom: 1.2rem;
+  font-family: "Anek Latin", sans-serif;
+}
+
+.intro-image {
+  flex-shrink: 0;
+  width: 400px;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.create-link-image h2{
+  font-size: 32px;
+  color: #B4A23A;
+  font-family: "Yatra One", system-ui;
+}
+
+.create-link-image p{
+  font-size: 18px;
+  color: #b1492e;
+  font-family:"Anek Latin", sans-serif; ;
+}
+
+.create-link-image {
+  text-align: center;
+  margin: 0rem 2rem;
+}
+
+.create-link-image img {
+  width: 900px; /* Adjust as needed */
+  height: auto;
+  cursor: pointer; /* Shows hand on hover */
+  transition: transform 0.3s ease;
+}
+
+.create-link-image img:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+
+.three-cards-section {
+  padding: 4rem 2rem;
+  background-color: #000; /* adjust as needed */
+  color: #fff; /* adjust text color if needed */
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards-heading {
+  text-align: center;
+  font-size: 32px;
+  color: #B4A23A;
+  font-family: "Yatra One", system-ui;
+  margin-bottom: 4rem;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 2rem); /* 3 per row, minus gap */
+  max-width: calc(33.333% - 2rem);
+  text-align: center;
+}
+
+.card img {
+  width: 90%;
+  height: auto;
+  border-radius: 1rem; /* optional, for soft edges */
+}
+
+.card h3 {
+  font-size: 32px;
+  color: #B4A23A;
+  font-family: "Yatra One", system-ui;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-size: 18px;
+  color: #b1492e; /* your theme color */
+}
+
+.change-section {
+  padding: 2rem 2rem;
+  background-color: #000;
+  color: #b1492e;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.change-image {
+  flex: 1.3;
+  min-width: 280px;
+  text-align: center;
+   justify-content: center;
+}
+
+.change-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+.change-text {
+  flex: 2;
+  min-width: 300px;
+  text-align: left;
+  justify-content: center;
+}
+
+.change-text h2 {
+  font-size: 2.5rem;
+  color: #b4a23a;
+  font-family: "Yatra One", system-ui;
+  margin-bottom: 1.5rem;
+}
+
+.change-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: "Anek Latin", sans-serif;
+}
+
+.site-footer {
+  background-color: #000;
+  color: #b1492e;
+  padding: 3rem 2rem;
+  font-family: "Anek Latin", sans-serif;
+  border-top: 2px solid #b4a23a;
+  text-align: center;
+}
+
+.site-footer h3 {
+  font-size: 1.8rem;
+  color: #b4a23a;
+  margin-bottom: 2rem;
+  font-family: "Yatra One", system-ui;
+}
+
+.footer {
+  margin-bottom: 74px;
+  padding: 2rem 1rem;
+  background-color: #000; /* adjust as needed */
+  border-top: 2px solid #d4af37; /* optional golden line */
+  color: #d46337; /* your current body color */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.footer-column.left {
+  text-align: left;
+}
+
+.footer-column.right {
+  text-align: right;
+}
+
+.footer-column h3 {
+  color: #d4af37;
+   font-family: "Yatra One", system-ui;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: #d46337;
+  font-family: "Anek Latin", sans-serif;
+  text-decoration: underline;
+}
+
+/* ===== Hero Heading Animation ===== */
+.common-heading {
+  animation: fadeInScale 2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Floating Animation for Hero Images ===== */
+.hero img {
+  opacity: 0;
+  animation: floatUpFade 3s ease forwards;
+}
+
+.hero img:nth-child(2) { animation-delay: 0.3s; }
+.hero img:nth-child(3) { animation-delay: 0.6s; }
+.hero img:nth-child(4) { animation-delay: 0.9s; }
+.hero img:nth-child(5) { animation-delay: 1.2s; }
+.hero img:nth-child(6) { animation-delay: 1.5s; }
+.hero img:nth-child(7) { animation-delay: 1.8s; }
+.hero img:nth-child(8) { animation-delay: 2.1s; }
+.hero img:nth-child(9) { animation-delay: 2.4s; }
+.hero img:nth-child(10) { animation-delay: 2.7s; }
+
+@keyframes floatUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Optional: Floating Loop for Liveliness ===== */
+.hero img:hover {
+  animation: hoverFloat 3s ease-in-out infinite;
+}
+
+@keyframes hoverFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Basic fade and slide-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Use delays to stagger elements */
+.animate-delay-1 {
+  animation-delay: 0.2s;
+}
+.animate-delay-2 {
+  animation-delay: 0.4s;
+}
+.animate-delay-3 {
+  animation-delay: 0.6s;
+}
+.animate-delay-4 {
+  animation-delay: 0.8s;
+}
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - The Unpaid Bills</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html">Create</a>
+      <a href="archive.html">Archive</a>
+    </nav>
+
+    <div class="common-heading">
+      ABOUT
+      <img
+        src="https://cdn.glitch.global/2150941d-89bb-4b40-bc81-b088f1c417ad/6.png?v=1745800488499"
+        alt="about-image"
+      />
+    </div>
+
+    <div class="container1">
+      <div class="form-panel1">
+        <section class="history">
+          <div class="history-content">
+            <!-- IMAGE SECTION -->
+            <div class="history-image">
+              <img
+                src="https://cdn.glitch.global/2150941d-89bb-4b40-bc81-b088f1c417ad/3.png?v=1745800500765"
+                alt="Iron"
+              />
+            </div>
+
+            <!-- TEXT SECTION -->
+            <div class="history-text">
+              <h2>History of Unpaid Domestic Labour in India</h2>
+              <p>
+                Unpaid domestic labour has long been the invisible backbone of
+                Indian households. Framed as love, duty, or tradition, this
+                labour is deeply tied to cultural, caste-based, and patriarchal
+                systems that normalise inequality.
+              </p>
+              <p>
+                Despite education, employment, and changing roles, this burden
+                remains. Even today, Indian women spend over 5 hours a day on
+                unpaid work nearly three times more than men. Until this labour
+                is acknowledged and valued, it will continue to limit women’s
+                freedom, time, and autonomy.
+              </p>
+    
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="form-panel">
+        <section class="mission">
+          <div class="mission-content">
+            <!-- TEXT SECTION -->
+            <div class="mission-text">
+              <h2>Mission and Vision</h2>
+              <p>
+                <strong>The Unpaid Bills®</strong> To make invisible labor
+                visible by documenting and personalizing receipts of unpaid
+                domestic work, sparking conversation and awareness.
+              </p>
+              <p>
+                To challenge systemic inequalities by creating a collective
+                archive that highlights and values women’s hidden labor through
+                design, data, and storytelling.
+              </p>
+            </div>
+
+            <!-- IMAGE SECTION -->
+            <div class="mission-image">
+              <img
+                src="https://cdn.glitch.global/2150941d-89bb-4b40-bc81-b088f1c417ad/9.png?v=1745800471612"
+                alt="Food Plate"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="stats">
+      <div class="left">
+        <img
+          src="https://cdn.glitch.global/2150941d-89bb-4b40-bc81-b088f1c417ad/4.png?v=1745800496866"
+          alt="Food Illustration"
+        />
+      </div>
+      <div class="right">
+        <div class="stat">
+          <h2>Women spend</h2>
+          <h1>81.5%</h1>
+          <p class="stat-label">On Unpaid Domestic Labour (Time Survey,2024)</p>
+        </div>
+        <div class="stat">
+          <h1>34%</h1>
+          <p class="stat-label">On Unpaid Domestic Labour (Time Survey,2024)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-banner">
+      <h1>THEY CALL IT LOVE</h1>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column left">
+          <h3>📩 Get Involved</h3>
+          <p>Want to contribute, collaborate or share your story?</p>
+          <p>
+            <a href="mailto:ishita.jalan6790@gmail.com">Email us</a> or
+            <a href="mailto:ishita.jalan6790@gmail.com">Submit a testimonial</a>
+          </p>
+        </div>
+
+        <div class="footer-column right">
+          <h3>© 2025 The Unpaid Bills</h3>
+          <p>Created by Ishita Jalan</p>
+          <p>Design to provoke | Feminist lens | Voices that matter</p>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate headings
+  gsap.from(".common-heading", {
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".common-heading",
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  // Animate history text and image
+  gsap.from(".history-image, .history-text", {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".history",
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  // Animate mission section
+  gsap.from(".mission-text, .mission-image", {
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".mission",
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  // Animate each stat
+  gsap.utils.toArray(".stat").forEach((stat, i) => {
+    gsap.from(stat, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: i * 0.2,
+      scrollTrigger: {
+        trigger: stat,
+        start: "top 90%",
+        toggleActions: "play none none reset"
+      }
+    });
+  });
+
+  // Animate bottom banner
+  gsap.from(".bottom-banner h1", {
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".bottom-banner",
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    }
+  });
+
+  // Animate footer
+  gsap.from(".footer-column", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "top 90%",
+      toggleActions: "play none none reset"
+    }
+  });
+</script>
+
+  </body>
+</html>
