@@ -235,7 +235,7 @@ button {
 }
 
 .footer {
- margin-top: 40rem; /* Or increase if needed */
+ margin-top: 15rem; /* Or increase if needed */
   position: relative; /* Ensure it's in normal flow */
   z-index: 1;
   padding: 2rem 1rem;
